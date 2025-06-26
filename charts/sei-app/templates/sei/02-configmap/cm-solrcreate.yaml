@@ -1,0 +1,10 @@
+apiVersion: v1
+binaryData:
+  solrcreate.sh: |-
+    {{ .Files.Get "apoio/scripts/solrcreate.sh" | b64enc }}
+kind: ConfigMap
+metadata:
+  name: cm-solrcreate-{{ .Values.app.orgao | lower }}
+  namespace: {{ .Values.app.solrcluster }}
+  labels:
+    {{- include "sei-app.labels" . | nindent 4 }}

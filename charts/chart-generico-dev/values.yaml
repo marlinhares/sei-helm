@@ -1,0 +1,56 @@
+sei-app:
+
+    app:
+    
+        namespace: ""
+    
+        # informe a classe do pvc onde serao criados os volumes do SEI
+        # deve estar pre-instalado no seu kubernetes um provisionador nfs
+        # gluster ou outro. No caso do docker-desktop ja existe um provisionador 
+        # automatico que cria uma pasta na vm do host ou do linux wsl. Para isso deixe
+        # o storageclass vazio    
+        storage:
+            #storageclass: nfs-client
+            storageclass: ""
+        
+       # as variaveis abaixo informam o namespace no qual os demais componentes
+        # estao instalados, caso esteja com nome incorreto o sei nao encontrara o
+        # componente    
+        dbcluster: ""
+        jodcluster: ""
+        solrcluster: ""
+        memcachedcluster: ""
+    
+        # indica se a automacao irah dropar e criar a base de dados
+        # que foi informada abaixo para essa instancia
+        dbRecreate: "true"
+    
+        protocolo: https
+        host: localhost
+        orgao: ORGAO1
+        orgao_descricao: Orgao Helm1
+        nome_complemento: Orgao Helm1
+        memcached_host: memcached
+        memcached_session: "true"
+   
+        fontes_git_privkey: ""
+        gituser_repo_modulos: dummy
+        gitpass_repo_modulos: dummy
+
+sei-db:
+    db:
+        namespace: ""
+
+sei-jod:
+    jod:
+        namespace: ""
+
+sei-memcached:
+    memcached:
+        namespace: ""
+
+
+sei-solr:
+    solr:
+        namespace: ""
+        

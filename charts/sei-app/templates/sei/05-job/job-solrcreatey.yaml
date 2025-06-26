@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+  namespace: {{ .Values.app.solrcluster }}
+  labels:
+    {{- include "sei-app.labels" . | nindent 4 }}
+spec:
+  backoffLimit: 2
+  completions: 1
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        job-name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+        {{- include "sei-app.labels" . | nindent 8 }}
+    spec:
+      containers:
+      - command:
+        - /seiscripts/solrcreate.sh
+        envFrom:
+        - secretRef:
+            name: sei-solr-secret1-{{ .Values.app.orgao | lower }}
+            optional: false
+        env:
+          - name: APP_ORGAO
+            value: {{ .Values.app.orgao | quote }}
+        image: processoeletronico/solr9.6.1:latest
+        imagePullPolicy: Always
+        name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+        stdin: true
+        tty: true
+        volumeMounts:
+        - mountPath: /seiscripts
+          name: solrcreate
+        - mountPath: /dados
+          name: vol3
+      restartPolicy: Never
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: solrcreate
+        configMap:
+          name: cm-solrcreate-{{ .Values.app.orgao | lower }}
+          defaultMode: 0755
+      - name: vol3
+        persistentVolumeClaim:
+          claimName: vol-sei-solr

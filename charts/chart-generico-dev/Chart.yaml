@@ -1,0 +1,28 @@
+apiVersion: v2
+name: sei-umbrella
+description: Helm chart subir todos os componentes para o SEI5. Embora seja a abordagem mais rápida, opte por publicar todos os elementos separadamente. Verifique a documentação para melhor entendimento dessa orientação.
+
+type: application
+
+version: 0.1.0
+
+appVersion: "3.6.8"
+
+dependencies:
+  - name: sei-app
+    version: 0.1.0
+    repository: "file://../sei-app"
+  - name: sei-db
+    version: 0.1.0
+    repository: "file://../sei-db"
+  - name: sei-jod
+    version: 0.1.0
+    repository: "file://../sei-jod"
+  - name: sei-memcached
+    version: 0.1.0
+    repository: "file://../sei-memcached"
+  - name: sei-solr
+    version: 0.1.0
+    repository: "file://../sei-solr"
+
+icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/seidevlogo.png

@@ -1,0 +1,12 @@
+#orgao: orgaon
+memcached:
+    
+    namespace: ""
+        
+    image:
+        repository: processoeletronico/memcached
+        pullPolicy: IfNotPresent
+        tag: ""
+    
+    nameOverride: ""
+    fullnameOverride: ""

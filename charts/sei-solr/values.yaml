@@ -1,0 +1,21 @@
+solr:
+    
+    namespace: ""
+    
+    # informe a classe do pvc onde sera criado o volume do solr
+    # deve estar pre-instalado no seu kubernetes um provisionador nfs
+    # gluster ou outro. No caso do docker-desktop ja existe um provisionador 
+    # automatico que cria uma pasta na vm do host ou do linux wsl. Para isso deixe
+    # o storageclass vazio    
+    storage:
+        #storageclass: nfs-client
+        storageclass: ""
+        
+    image:
+        repository: processoeletronico/solr9.6.1
+        pullPolicy: IfNotPresent
+        tag: ""
+    
+    nameOverride: ""
+    fullnameOverride: ""
+

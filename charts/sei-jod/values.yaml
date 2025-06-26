@@ -1,0 +1,11 @@
+jod:
+    
+    namespace: ""
+    
+    image:
+        repository: processoeletronico/jod4.4.8
+        pullPolicy: IfNotPresent
+        tag: ""
+    
+    nameOverride: ""
+    fullnameOverride: ""
