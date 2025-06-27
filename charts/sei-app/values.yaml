@@ -1,12 +1,14 @@
 app:
     
+    # namespace onde roda o app, salvo em alguns casos especificos deixe esse valor em branco e informe o namespace pelo helm
     namespace: ""
     
     # informe a classe do pvc onde serao criados os volumes do SEI
     # deve estar pre-instalado no seu kubernetes um provisionador nfs
     # gluster ou outro. No caso do docker-desktop ja existe um provisionador 
     # automatico que cria uma pasta na vm do host ou do linux wsl. Para isso deixe
-    # o storageclass vazio    
+    # o storageclass vazio
+    # caso contrario tera q criar o pv manualmente
     storage:
         #storageclass: nfs-client
         storageclass: ""
@@ -37,6 +39,7 @@ app:
     orgao_descricao: Orgao Helm1
     nome_complemento: Orgao Helm1
     memcached_host: memcached
+    # indica se o memcached armazena a sessao do php, dispensando o sticky session
     memcached_session: "true"
     db_tipo: MySql
     db_host: db
@@ -154,6 +157,8 @@ app:
     mail_senha: ""
     sei_chave_acesso: "7babf862e12bd48f3101075c399040303d94a493c7ce9306470f719bb453e0428c6135dc"
     sip_chave_acesso: "d27791b894028d9e7fa34887ad6f0c9a2c559cccda5f64f4e108e3573d5db862b66fb933"
+    #chave privada do github em formato base64 onde encontra-se o fonte, veja mais informacoes no readme do projeto no githup
+    # caso nao informe tera q fornecer o fonte manualmente no volume. O app vai esperar ate encontrar um volume valido
     fontes_git_privkey: ""
     gituser_repo_modulos: dummy
     gitpass_repo_modulos: dummy
