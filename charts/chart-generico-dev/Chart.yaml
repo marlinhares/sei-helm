@@ -1,6 +1,6 @@
 apiVersion: v2
 name: sei-umbrella
-description: Helm chart subir todos os componentes para o SEI5. Embora seja a abordagem mais rápida, opte por publicar todos os elementos separadamente. Verifique a documentação para melhor entendimento dessa orientação.
+description: Helm chart para subir todos os componentes para o SEI5. Embora seja a abordagem mais rápida, opte por publicar todos os elementos separadamente. Verifique a documentação para melhor entendimento dessa orientação.
 
 type: application
 

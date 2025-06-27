@@ -3,9 +3,9 @@ entries:
   sei-app:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.298196-03:00"
+    created: "2025-06-27T13:49:15.715297-03:00"
     description: Helm chart para subir o nó de aplicação do SEI-5 / Agendador / Ingress
-    digest: 9736086b7a306b5d8ce8ebe968a800b0426e032168281e3f7150d5a4e287cb02
+    digest: 467e7c2429523d60b253dce94ae2b105657c482576b0f80caceb6572353446e0
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/phplogo.png
     name: sei-app
     type: application
@@ -15,9 +15,9 @@ entries:
   sei-db:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.298337-03:00"
+    created: "2025-06-27T13:49:15.715434-03:00"
     description: Helm chart com o banco de dados MariaDb para o SEI-5
-    digest: d07957533ef0a4045d7c1e8805d156a39e62d649e8275761239b37e2e009ab34
+    digest: 26ec850b965a7f34ae452ecb9e6473e6b30ac3670dca2e6f9941b517131ff2f2
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/mariadblogo.png
     name: sei-db
     type: application
@@ -27,9 +27,9 @@ entries:
   sei-jod:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.298465-03:00"
+    created: "2025-06-27T13:49:15.71555-03:00"
     description: Helm chart para subir o JOD para o SEI-5
-    digest: 9bca279788bf8d656a6194051accef24c8116fd2e94b152084fdc7e2862decbe
+    digest: 2b5daa105fe842962ce0dee75643ef7a21a16ce129ebed4d73bbc2632f73d6a2
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/jodlogo.png
     name: sei-jod
     type: application
@@ -39,9 +39,9 @@ entries:
   sei-memcached:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.298737-03:00"
+    created: "2025-06-27T13:49:15.715663-03:00"
     description: Helm chart para subir o memcached para o SEI
-    digest: 0719be7e3def915fcf21cb5ef13ca0fe478cb0b865ca49a031966cd605b126bd
+    digest: 2eb250574add6111d959bbd661e63c81c76f063fa69ec671043bcbc71fc2b766
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/memcachedlogo.png
     name: sei-memcached
     type: application
@@ -51,9 +51,9 @@ entries:
   sei-solr:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.299129-03:00"
+    created: "2025-06-27T13:49:15.715793-03:00"
     description: Helm chart para subir o SOLR para o SEI-5
-    digest: fa718d5701f744aa23e258e8ef770d24192589053154abf0d6cef9d7d1333dd2
+    digest: cf17f6974a8432c9f381b78edee724382e6e5f56dba29d8a0f9f94738044502b
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/solrlogo.png
     name: sei-solr
     type: application
@@ -63,7 +63,7 @@ entries:
   sei-umbrella:
   - apiVersion: v2
     appVersion: 3.6.8
-    created: "2025-06-26T17:15:35.300127-03:00"
+    created: "2025-06-27T13:49:15.716745-03:00"
     dependencies:
     - name: sei-app
       repository: file://../sei-app
@@ -80,14 +80,14 @@ entries:
     - name: sei-solr
       repository: file://../sei-solr
       version: 0.1.0
-    description: Helm chart subir todos os componentes para o SEI5. Embora seja a
-      abordagem mais rápida, opte por publicar todos os elementos separadamente. Verifique
-      a documentação para melhor entendimento dessa orientação.
-    digest: 57282a0d59a822e2da3da60add7c9d37846f65b419d648dc9ab0dc3af6edbbe2
+    description: Helm chart para subir todos os componentes para o SEI5. Embora seja
+      a abordagem mais rápida, opte por publicar todos os elementos separadamente.
+      Verifique a documentação para melhor entendimento dessa orientação.
+    digest: 8ac68da1dbc65d5e2a494515b28d26c26cef0ec95d2d21d58be4b585894a6968
     icon: https://raw.githubusercontent.com/pengovbr/sei-helm/refs/heads/main/apoio/imagens/seidevlogo.png
     name: sei-umbrella
     type: application
     urls:
     - https://pengovbr.github.io/sei-helm/sei-umbrella-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-26T17:15:35.29759-03:00"
+generated: "2025-06-27T13:49:15.714713-03:00"
