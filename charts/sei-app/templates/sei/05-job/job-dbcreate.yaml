@@ -20,6 +20,9 @@ spec:
       containers:
       - command:
         - /automationscripts/dbcreate.sh
+        env:
+          - name: ID_INSTALACAO
+            value: {{ .Values.app.idInstalacao | quote }}
         envFrom:
         - configMapRef:
             name: sei-app

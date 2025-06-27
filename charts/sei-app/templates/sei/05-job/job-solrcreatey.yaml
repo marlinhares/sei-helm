@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+  name: sei-solrcreate-{{ .Values.app.idInstalacao | lower }}
   namespace: {{ .Values.app.solrcluster }}
   labels:
     {{- include "sei-app.labels" . | nindent 4 }}
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        job-name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+        job-name: sei-solrcreate-{{ .Values.app.idInstalacao | lower }}
         {{- include "sei-app.labels" . | nindent 8 }}
     spec:
       containers:
@@ -20,14 +20,14 @@ spec:
         - /seiscripts/solrcreate.sh
         envFrom:
         - secretRef:
-            name: sei-solr-secret1-{{ .Values.app.orgao | lower }}
+            name: sei-solr-secret1-{{ .Values.app.idInstalacao | lower }}
             optional: false
         env:
-          - name: APP_ORGAO
-            value: {{ .Values.app.orgao | quote }}
+          - name: ID_INSTALACAO
+            value: {{ .Values.app.idInstalacao | quote }}
         image: processoeletronico/solr9.6.1:latest
         imagePullPolicy: Always
-        name: sei-solrcreate-{{ .Values.app.orgao | lower }}
+        name: sei-solrcreate-{{ .Values.app.idInstalacao | lower }}
         stdin: true
         tty: true
         volumeMounts:
@@ -40,7 +40,7 @@ spec:
       volumes:
       - name: solrcreate
         configMap:
-          name: cm-solrcreate-{{ .Values.app.orgao | lower }}
+          name: cm-solrcreate-{{ .Values.app.idInstalacao | lower }}
           defaultMode: 0755
       - name: vol3
         persistentVolumeClaim:

@@ -11,11 +11,11 @@ data:
   APP_DB_TIPO: {{ .Values.app.db_tipo | quote }}
   APP_DB_HOST: "db"
   APP_SOLR_URL: {{ .Values.app.solr_url | quote }}
-  APP_SOLR_CORE_PROTOCOLOS: "{{ .Values.app.orgao | lower }}-sei-protocolos"
+  APP_SOLR_CORE_PROTOCOLOS: "{{ .Values.app.idInstalacao | lower }}-sei-protocolos"
   APP_SOLR_TEMPO_COMMIT_PROTOCOLOS: {{ .Values.app.solr_tempo_commit_protocolos | quote }}
-  APP_SOLR_CORE_BASECONHECIMENTO: "{{ .Values.app.orgao | lower }}-sei-bases-conhecimento"
+  APP_SOLR_CORE_BASECONHECIMENTO: "{{ .Values.app.idInstalacao | lower }}-sei-bases-conhecimento"
   APP_SOLR_TEMPO_COMMIT_BASECONHECIMENTO: {{ .Values.app.solr_tempo_commit_base_conhecimento | quote }}
-  APP_SOLR_CORE_PUBLICACOES: "{{ .Values.app.orgao | lower }}-sei-publicacoes"
+  APP_SOLR_CORE_PUBLICACOES: "{{ .Values.app.idInstalacao | lower }}-sei-publicacoes"
   APP_SOLR_TEMPO_COMMIT_PUBLICACOES: {{ .Values.app.solr_tempo_commit_publicacoes | quote }}
   APP_MAIL_TIPO: {{ .Values.app.mail_tipo | quote }}
   APP_MAIL_SERVIDOR: {{ .Values.app.mail_servidor | quote }}

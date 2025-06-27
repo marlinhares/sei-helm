@@ -4,7 +4,7 @@ set -e
 
 SOLRUSER="${SOLRADMINUSER}"
 SOLRPASS="${SOLRADMINPASS}"
-SOLRID=$( echo -n "${APP_ORGAO}" | tr '[:upper:]' '[:lower:]' )
+SOLRID=$( echo -n "${ID_INSTALACAO}" | tr '[:upper:]' '[:lower:]' )
 
 CORE_PROTOCOLOS=${SOLRID}-sei-protocolos
 CORE_PUBLICACOES=${SOLRID}-sei-publicacoes
@@ -66,7 +66,7 @@ else
 
 fi
 
-echo "Apagando Documentos do Solr para o ${APP_ORGAO}"
+echo "Apagando Documentos do Solr para o ${ID_INSTALACAO}"
 
 curl --user ${SOLRUSER}:${SOLRPASS} http://solrinterno:8983/solr/${CORE_PROTOCOLOS}/update?commit=true -H "Content-Type: text/xml" \
     --data-binary '<delete><query>*:*</query></delete>'

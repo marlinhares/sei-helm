@@ -9,7 +9,6 @@ metadata:
     {{- include "sei-app.labels" . | nindent 4 }}
 spec:
   accessModes:
-  - ReadWriteOnce
   - ReadWriteMany
   resources:
     requests:

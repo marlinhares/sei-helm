@@ -28,7 +28,13 @@ sei-app:
         # indica se a automacao irah dropar e criar a base de dados
         # que foi informada abaixo para essa instancia
         dbRecreate: "true"
-    
+
+        # id identificador do ambiente numero unico para diferenciar as bases solr e banco
+        # ATENCAO PRESTAR ATENCAO NESTA STRING
+        # o as bases de dados sei e solr terao esse id no nome
+        # caso instale o mesmo id com a opcao de reconstruir o banco, a automacao ira apagar os dados
+        idInstalacao: "orgao1"
+
         protocolo: https
         host: localhost
         orgao: ORGAO1

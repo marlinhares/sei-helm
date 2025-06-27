@@ -2,7 +2,7 @@
 
 set -e
 
-DBID=$( echo -n "${APP_ORGAO}" | tr '[:upper:]' '[:lower:]' )
+DBID=$( echo -n "${ID_INSTALACAO}" | tr '[:upper:]' '[:lower:]' )
 
 cd /dbref
 
