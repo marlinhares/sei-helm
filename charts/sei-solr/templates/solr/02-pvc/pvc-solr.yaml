@@ -8,6 +8,13 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
+  {{- if .Values.solr.volumeSolr.claimRef.name }}
+    claimRef:
+      {{- with .Values.solr.namespace }}
+      namespace: {{ . }}
+      {{- end }}
+      name: {{ .Values.solr.volumeSolr.claimRef.name }}
+  {{- end }}
   resources:
     requests:
       storage: 50Gi

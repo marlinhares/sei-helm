@@ -18,3 +18,8 @@ db:
     
     nameOverride: ""
     fullnameOverride: ""
+    
+    # bind dos volumes kubernetes. Em alguns clusters de kube ao subir o pvc faz-se necessario informar o claimRef
+    volumeDb:
+      claimRef:
+        name: ""

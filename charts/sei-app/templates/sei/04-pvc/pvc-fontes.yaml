@@ -10,6 +10,13 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
+  {{- if .Values.app.volumeFontes.claimRef.name }}
+    claimRef:
+      {{- with .Values.app.namespace }}
+      namespace: {{ . }}
+      {{- end }}
+      name: {{ .Values.app.volumeFontes.claimRef.name }}
+  {{- end }}
   resources:
     requests:
       storage: 1Gi
