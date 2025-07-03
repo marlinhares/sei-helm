@@ -62,7 +62,7 @@ No values do sei-app tem dezenas de opções a serem preenchidas como: url que o
 
 ## Passo a passo da subida do ambiente na interface gráfica
 
-Adicione ao seu gerenciador helm a seguinte url: https://pengovbr.github.io/sei-helm
+Adicione ao seu gerenciador helm a seguinte url: https://pengovbr.github.io/sei-helm-repo
 
 No seu kube crie os seguintes namespaces:
 
