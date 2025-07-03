@@ -8,13 +8,6 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  {{- if .Values.db.volumeDb.claimRef.name }}
-    claimRef:
-      {{- with .Values.db.namespace }}
-      namespace: {{ . }}
-      {{- end }}
-      name: {{ .Values.db.volumeDb.claimRef.name }}
-  {{- end }}
   resources:
     requests:
       storage: 50Gi

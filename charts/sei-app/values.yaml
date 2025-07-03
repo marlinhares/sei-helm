@@ -169,16 +169,3 @@ app:
     gituser_repo_modulos: dummy
     gitpass_repo_modulos: dummy
 
-
-    # bind dos volumes kubernetes. Em alguns clusters de kube ao subir o pvc faz-se necessario informar o claimRef
-    volumeAnexos:
-      claimRef:
-        name: ""
-
-    volumeControlador:
-      claimRef:
-        name: ""
-
-    volumeFontes:
-      claimRef:
-        name: ""
