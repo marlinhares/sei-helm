@@ -4,13 +4,13 @@ description: Helm chart para subir todos os componentes para o SEI5. Embora seja
 
 type: application
 
-version: 1.0.0
+version: 1.0.1
 
 appVersion: "3.6.8"
 
 dependencies:
   - name: sei-app
-    version: 1.0.0
+    version: 1.0.1
     repository: "file://../sei-app"
   - name: sei-db
     version: 1.0.0
